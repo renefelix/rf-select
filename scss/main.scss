@@ -1,0 +1,198 @@
+@mixin fonte-padrao(){
+    font-family: 'Arial', sans-serif;
+    color: #333333;
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: none;
+}
+
+.rf-select{
+    width: 300px;
+    position: relative;
+    cursor: pointer;
+    @include fonte-padrao();
+    outline: none;
+    margin-bottom: 10px;
+
+    &:hover{
+        .rf-hidden-area{
+            display: block;
+        }
+    }
+
+    &.disabled{
+        .rf-select-main{
+            background: #CCC;
+            pointer-events: none;
+        }
+
+        &.rf-opened{
+            .rf-select-main{
+                border-radius: 0px;
+            }
+        }
+        
+        .rf-hidden-area{
+            display: none !important;
+        }
+    }
+
+    .rf-select-main{
+        min-height: 35px;
+        background: #fff;
+        padding: 0px 10px;
+        border: 1px solid purple;
+        border-radius: 0px;
+        overflow: auto;
+        padding: 5px 25px 0px 5px;
+        max-height: 66px;
+
+        .rf-opened{
+            background: #f00;
+        }
+
+        .rf-multiple{
+            background: #efefef;
+            padding: 0px 5px 0px 20px;
+            position: relative;
+            border: 1px solid #999;
+            border-radius: 0px;
+            cursor: pointer;
+            float: left;
+            margin: 0px 5px 5px 0px;
+            overflow: hidden;
+            height: 26px;
+            line-height: 26px;
+
+            &::before{
+                content: '\0078';
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                transform: translateY(-50%);
+                left: 5px;
+                top: 50%;
+                color: purple;
+                line-height: 10px;
+                font-size: 15px;
+                text-align: center;
+            }
+
+            &:hover{
+                border: 1px solid #333;
+                background: #dedede;
+            }
+
+        }
+
+        .rf-unique{
+            padding: 0px 5px 0px 5px;
+            margin: 2px 5px 0px 0px;
+            height: 26px;
+            line-height: 26px;
+        }
+
+        &:after{
+            content: '\25BC';
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            color: purple;
+            position: absolute;
+            right: 5px;
+            transform: translateY(-50%);
+            top: 50%;
+        }
+    }
+
+    //===================================//
+    // Listagem dos itens no select fake //
+    //===================================//
+
+    .rf-hidden-area{
+        display: none;
+        background: white;
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        border-radius: 0px;
+        border: 1px solid grey;
+        border-top: 0px;
+        z-index: 999;
+
+        .rf-input{
+            background: #FFF;
+            display: flex;
+            flex-direction: column;
+            border-bottom: 1px solid #999;
+
+            input{
+                outline: none;
+                padding: 5px;
+                margin: 5px;
+            }
+        }
+
+        .rf-select-list{
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            max-height: 200px;
+            overflow: auto;
+    
+            li{
+                padding: 10px 10px;
+
+                &.hide{
+                    display: none;
+                }
+    
+                &:hover{
+                    background:#efefef;
+                    cursor: pointer;
+                }
+
+                &.active{
+                    background: #ccc;
+                }
+
+                &.disabled{
+                    color: #CCC;
+                    background: #EFEFEF;
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+
+    &.rf-opened{
+        .rf-select-main{
+            border-radius: 0px;
+        }
+
+        .rf-hidden-area{
+            display: inline-block;
+        }
+    }
+
+    ::-webkit-scrollbar {
+        width: 8px;
+        position: relative;
+        left: 20px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        border-radius: 0px;
+        background: #efefef;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: #999; 
+        border-radius: 0px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: #999; 
+    }
+}
