@@ -1,5 +1,5 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
@@ -47,7 +47,14 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new HtmlWebpackPlugin(),
+		new HtmlWebPackPlugin({
+			template: path.resolve(__dirname, 'src/index.html'),
+			filename: path.resolve(__dirname, 'dist/index.html'),
+			files: {
+			 css: ['index.css'],
+			 js: ['rf-select.js'],
+			}
+		}),
 		new MiniCSSExtractPlugin({
 			filename: 'css/index.css'
 		})
