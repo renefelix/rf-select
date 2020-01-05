@@ -1,5 +1,7 @@
 import criarListagemOptions from "./listagem-options";
 import direcaoListagemUpDown from "./direcao-listagem";
+import cliqueNaOpcao from "./clique-option";
+import {contagemDeOptionsSelecionados} from "./conta-options-selecionados";
 
 /**
  * Essa função é responsável por controlar todas as ações acionadas
@@ -11,6 +13,8 @@ export default function cliqueNoSelect(classSelect){
     let listagemRFSelect = document.querySelectorAll('.rf-listagem');
 
     Array.prototype.forEach.call(todosOsSelects, (select, indexSelect) => {
+        let selectDOM = document.querySelectorAll(classSelect);
+
         select.addEventListener('click', () => {
 
             // Antes de abrir a listagem do select referente, fecha todos que tiverem abertos
@@ -23,11 +27,20 @@ export default function cliqueNoSelect(classSelect){
             // Função para criar todas as opções iguais do select
             criarListagemOptions(classSelect, indexSelect);
 
+            // Função que permite o clique nos options
+            cliqueNaOpcao(classSelect);
+
             // Adiciona a class show para poder abrir a listagem do RF Select clicado
             listagemRFSelect[indexSelect].classList.toggle('show');
 
             // Função que direciona se a lista vai abrir para cima ou para baixo
             direcaoListagemUpDown(listagemRFSelect, indexSelect);
+            
+            // Adiciona a class selected na opção do RF Select caso não tenha nenhuma opção selecionada
+            if(contagemDeOptionsSelecionados(selectDOM[indexSelect]) <= 0){
+                let allRfOption = document.querySelectorAll(`li[data-rf-select="${indexSelect}"]`);
+                allRfOption[0].classList.add('selected');
+            }
         });
     })
 }
