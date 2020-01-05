@@ -5,46 +5,145 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>RF Select</title>
+
+    <style>
+        *{margin: 0px; padding: 0px;}
+        h1{background: grey; font-size: 14px; color: white; padding: 5px; font-family: Arial, Helvetica, sans-serif; margin-bottom: 5px;}
+        h2{background: limegreen; font-size: 14px; color: white; padding: 5px; font-family: Arial, Helvetica, sans-serif; margin-bottom: 5px;}
+        h3{background: lightseagreen; font-size: 14px; color: white; padding: 5px; font-family: Arial, Helvetica, sans-serif; margin-bottom: 5px;}
+        .col{width: 45%; float: left; padding: 15px; background: lightsalmon; margin: 0px 10px 15px 10px;}
+        .col-multiple{width: 45%; float: left; padding: 15px; background: lightsteelblue; margin: 0px 10px 15px 10px;}
+        select{margin-top: 15px; margin-bottom: 10px;}
+    </style>
 </head>
 <body>
-    <h1>Select disabled</h1>
-    <select class="select" disabled="disabled">
-        <option value="Nicki Minaj - The Pinkprint">Nicki Minaj - The Pinkprint</option>
-        <option value="Beyoncé - Lemonade">Beyoncé - Lemonade</option>
-        <option value="Rihanna - Anti">Rihanna - Anti</option>
-        <option value="Cardi B - Invasion Of Privacy">Cardi B - Invasion Of Privacy</option>
-        <option value="Megan Thee Stallion - Fever">Megan Thee Stallion - Fever</option>
-        <option value="Angel Haze - Dirty Gold">Angel Haze - Dirty Gold</option>
-    </select>
 
-    <h1>Option disabled</h1>
-    <select class="select">
-        <option value="Nicki Minaj - The Pinkprint">Nicki Minaj - The Pinkprint</option>
-        <option disabled="disabled" value="Beyoncé - Lemonade">Beyoncé - Lemonade</option>
-        <option value="Rihanna - Anti">Rihanna - Anti</option>
-        <option value="Cardi B - Invasion Of Privacy">Cardi B - Invasion Of Privacy</option>
-        <option value="Megan Thee Stallion - Fever">Megan Thee Stallion - Fever</option>
-        <option value="Angel Haze - Dirty Gold">Angel Haze - Dirty Gold</option>
-    </select>
+    <div class="col">
+        <h1>No options selected</h1>
+        <select class="select">
+            <option value="Value: Nicki Minaj - The Pinkprint">Nicki Minaj - The Pinkprint</option>
+            <option value="Value: Beyoncé - Lemonade">Beyoncé - Lemonade</option>
+            <option value="Value: Rihanna - Anti">Rihanna - Anti</option>
+            <option value="Value: Cardi B - Invasion Of Privacy">Cardi B - Invasion Of Privacy</option>
+            <option value="Value: Megan Thee Stallion - Fever">Megan Thee Stallion - Fever</option>
+            <option value="Value: Angel Haze - Dirty Gold">Angel Haze - Dirty Gold</option>
+        </select>
 
-    <h1>Option selected</h1>
-    <select class="select">
-        <option value="Nicki Minaj - The Pinkprint">Nicki Minaj - The Pinkprint</option>
-        <option selected value="Beyoncé - Lemonade">Beyoncé - Lemonade</option>
-        <option value="Rihanna - Anti">Rihanna - Anti</option>
-        <option value="Cardi B - Invasion Of Privacy">Cardi B - Invasion Of Privacy</option>
-        <option value="Megan Thee Stallion - Fever">Megan Thee Stallion - Fever</option>
-        <option value="Angel Haze - Dirty Gold">Angel Haze - Dirty Gold</option>
-    </select>
+        <h1>One option selected</h1>
+        <select class="select">
+            <option value="Value: Nicki Minaj - The Pinkprint">Nicki Minaj - The Pinkprint</option>
+            <option selected value="Value: Beyoncé - Lemonade">Beyoncé - Lemonade</option>
+            <option value="Value: Rihanna - Anti">Rihanna - Anti</option>
+            <option value="Value: Cardi B - Invasion Of Privacy">Cardi B - Invasion Of Privacy</option>
+            <option value="Value: Megan Thee Stallion - Fever">Megan Thee Stallion - Fever</option>
+            <option value="Value: Angel Haze - Dirty Gold">Angel Haze - Dirty Gold</option>
+        </select>
 
-    <h1>Multiple select</h1>
-    <select class="select" multiple>
-        <option value="Nicki Minaj - The Pinkprint">Nicki Minaj - The Pinkprint</option>
-        <option value="Beyoncé - Lemonade">Beyoncé - Lemonade</option>
-        <option value="Rihanna - Anti">Rihanna - Anti</option>
-        <option value="Cardi B - Invasion Of Privacy">Cardi B - Invasion Of Privacy</option>
-        <option value="Megan Thee Stallion - Fever">Megan Thee Stallion - Fever</option>
-        <option value="Angel Haze - Dirty Gold">Angel Haze - Dirty Gold</option>
-    </select>
+        <h1>Two options selected</h1>
+        <select class="select">
+            <option value="Value: Nicki Minaj - The Pinkprint">Nicki Minaj - The Pinkprint</option>
+            <option value="Value: Beyoncé - Lemonade">Beyoncé - Lemonade</option>
+            <option selected value="Value: Rihanna - Anti">Rihanna - Anti</option>
+            <option selected value="Value: Cardi B - Invasion Of Privacy">Cardi B - Invasion Of Privacy</option>
+            <option value="Value: Megan Thee Stallion - Fever">Megan Thee Stallion - Fever</option>
+            <option value="Value: Angel Haze - Dirty Gold">Angel Haze - Dirty Gold</option>
+        </select>
+    </div>
+
+    <div class="col">
+        <h2>No options selected with data-placeholder</h2>
+        <select class="select" data-placeholder="Escolha um CD">
+            <option value="Value: Nicki Minaj - The Pinkprint">Nicki Minaj - The Pinkprint</option>
+            <option value="Value: Beyoncé - Lemonade">Beyoncé - Lemonade</option>
+            <option value="Value: Rihanna - Anti">Rihanna - Anti</option>
+            <option value="Value: Cardi B - Invasion Of Privacy">Cardi B - Invasion Of Privacy</option>
+            <option value="Value: Megan Thee Stallion - Fever">Megan Thee Stallion - Fever</option>
+            <option value="Value: Angel Haze - Dirty Gold">Angel Haze - Dirty Gold</option>
+        </select>
+
+        <h2>One option selected with data-placeholder</h2>
+        <select class="select" data-placeholder="Escolha um CD">
+            <option value="Value: Nicki Minaj - The Pinkprint">Nicki Minaj - The Pinkprint</option>
+            <option value="Value: Beyoncé - Lemonade">Beyoncé - Lemonade</option>
+            <option value="Value: Rihanna - Anti">Rihanna - Anti</option>
+            <option value="Value: Cardi B - Invasion Of Privacy">Cardi B - Invasion Of Privacy</option>
+            <option value="Value: Megan Thee Stallion - Fever">Megan Thee Stallion - Fever</option>
+            <option selected value="Value: Angel Haze - Dirty Gold">Angel Haze - Dirty Gold</option>
+        </select>
+
+        <h2>Two options selected with data-placeholder</h2>
+        <select class="select" data-placeholder="Escolha um CD">
+            <option value="Value: Nicki Minaj - The Pinkprint">Nicki Minaj - The Pinkprint</option>
+            <option value="Value: Beyoncé - Lemonade">Beyoncé - Lemonade</option>
+            <option value="Value: Rihanna - Anti">Rihanna - Anti</option>
+            <option selected value="Value: Cardi B - Invasion Of Privacy">Cardi B - Invasion Of Privacy</option>
+            <option selected value="Value: Megan Thee Stallion - Fever">Megan Thee Stallion - Fever</option>
+            <option value="Value: Angel Haze - Dirty Gold">Angel Haze - Dirty Gold</option>
+        </select>
+    </div>
+
+    <div class="col-multiple">
+        <h1>[MULTIPLE] No options selected</h1>
+        <select multiple class="select">
+            <option value="Value: Nicki Minaj - The Pinkprint">Nicki Minaj - The Pinkprint</option>
+            <option value="Value: Beyoncé - Lemonade">Beyoncé - Lemonade</option>
+            <option value="Value: Rihanna - Anti">Rihanna - Anti</option>
+            <option value="Value: Cardi B - Invasion Of Privacy">Cardi B - Invasion Of Privacy</option>
+            <option value="Value: Megan Thee Stallion - Fever">Megan Thee Stallion - Fever</option>
+            <option value="Value: Angel Haze - Dirty Gold">Angel Haze - Dirty Gold</option>
+        </select>
+
+        <h1>[MULTIPLE] One option selected</h1>
+        <select multiple class="select">
+            <option value="Value: Nicki Minaj - The Pinkprint">Nicki Minaj - The Pinkprint</option>
+            <option selected value="Value: Beyoncé - Lemonade">Beyoncé - Lemonade</option>
+            <option value="Value: Rihanna - Anti">Rihanna - Anti</option>
+            <option value="Value: Cardi B - Invasion Of Privacy">Cardi B - Invasion Of Privacy</option>
+            <option value="Value: Megan Thee Stallion - Fever">Megan Thee Stallion - Fever</option>
+            <option value="Value: Angel Haze - Dirty Gold">Angel Haze - Dirty Gold</option>
+        </select>
+
+        <h1>[MULTIPLE] Two options selected</h1>
+        <select multiple class="select">
+            <option value="Value: Nicki Minaj - The Pinkprint">Nicki Minaj - The Pinkprint</option>
+            <option value="Value: Beyoncé - Lemonade">Beyoncé - Lemonade</option>
+            <option selected value="Value: Rihanna - Anti">Rihanna - Anti</option>
+            <option selected value="Value: Cardi B - Invasion Of Privacy">Cardi B - Invasion Of Privacy</option>
+            <option value="Value: Megan Thee Stallion - Fever">Megan Thee Stallion - Fever</option>
+            <option value="Value: Angel Haze - Dirty Gold">Angel Haze - Dirty Gold</option>
+        </select>
+    </div>
+
+    <div class="col-multiple">
+        <h3>[MULTIPLE] No options selected with data-placeholder</h3>
+        <select multiple class="select" data-placeholder="Escolha um CD">
+            <option value="Value: Nicki Minaj - The Pinkprint">Nicki Minaj - The Pinkprint</option>
+            <option value="Value: Beyoncé - Lemonade">Beyoncé - Lemonade</option>
+            <option value="Value: Rihanna - Anti">Rihanna - Anti</option>
+            <option value="Value: Cardi B - Invasion Of Privacy">Cardi B - Invasion Of Privacy</option>
+            <option value="Value: Megan Thee Stallion - Fever">Megan Thee Stallion - Fever</option>
+            <option value="Value: Angel Haze - Dirty Gold">Angel Haze - Dirty Gold</option>
+        </select>
+
+        <h3>[MULTIPLE] One option selected with data-placeholder</h3>
+        <select multiple class="select" data-placeholder="Escolha um CD">
+            <option value="Value: Nicki Minaj - The Pinkprint">Nicki Minaj - The Pinkprint</option>
+            <option value="Value: Beyoncé - Lemonade">Beyoncé - Lemonade</option>
+            <option value="Value: Rihanna - Anti">Rihanna - Anti</option>
+            <option value="Value: Cardi B - Invasion Of Privacy">Cardi B - Invasion Of Privacy</option>
+            <option value="Value: Megan Thee Stallion - Fever">Megan Thee Stallion - Fever</option>
+            <option selected value="Value: Angel Haze - Dirty Gold">Angel Haze - Dirty Gold</option>
+        </select>
+
+        <h3>[MULTIPLE] Two options selected with data-placeholder</h3>
+        <select multiple class="select" data-placeholder="Escolha um CD">
+            <option value="Value: Nicki Minaj - The Pinkprint">Nicki Minaj - The Pinkprint</option>
+            <option value="Value: Beyoncé - Lemonade">Beyoncé - Lemonade</option>
+            <option value="Value: Rihanna - Anti">Rihanna - Anti</option>
+            <option selected value="Value: Cardi B - Invasion Of Privacy">Cardi B - Invasion Of Privacy</option>
+            <option selected value="Value: Megan Thee Stallion - Fever">Megan Thee Stallion - Fever</option>
+            <option value="Value: Angel Haze - Dirty Gold">Angel Haze - Dirty Gold</option>
+        </select>
+    </div>
 </body>
 </html>
