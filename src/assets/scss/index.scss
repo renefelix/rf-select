@@ -88,11 +88,6 @@
 					display: none;
 				}
 
-				&:focus{
-					background: #CCCCCC;
-					outline: none;
-				}
-
 				&.disabled{
 					color: #EFEFEF;
 					pointer-events: none;
