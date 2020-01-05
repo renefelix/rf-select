@@ -6,7 +6,12 @@
 	border: 1px solid #95a5a6;
 	cursor: pointer;
     position: relative;
-    font-family: Arial, Helvetica, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
+	margin-bottom: 15px;
+
+	&:focus{
+		background: #EFEFEF;
+	}
     
     .rf-select-header{
         color: #000000;
@@ -19,5 +24,90 @@
 		text-overflow: ellipsis;
 		display: flex;
         align-items: center;
-    }
+	}
+	
+	.rf-listagem{
+		position: absolute;
+		width: auto;
+		background: #FFFFFF;
+		border: 1px solid #95a5a6;
+		top: 30px;
+		display: none;
+		min-width: 100%;
+		margin-left: -1px;
+		z-index: 1000;
+
+		.rf-select-busca{
+			padding: 5px;
+
+			input{
+				width: calc(100% - 12px);
+				padding: 5px;
+				border: 1px solid #95a5a6;
+				border-radius: 2px;
+
+				&:focus{
+					outline: 1px solid #95a5a6;
+				}
+			}
+		}
+
+		.rf-scroll{
+			max-height: 250px;
+			overflow: auto !important;
+		}
+
+		.rf-select-acoes{
+			border-top: 1px solid #000000;
+			padding: 5px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		ul{
+			margin: 0px;
+			padding: 0px;
+			list-style: none;
+		
+			.rf-select-option{
+				font-size: 14px;
+				margin: 0px;
+				padding: 6px 10px;
+				cursor: pointer;
+
+				&:hover{
+					background: #CCCCCC;
+				}
+
+				&.selected{
+					background: #CCCCCC;
+				}
+
+				&.hide{
+					display: none;
+				}
+
+				&:focus{
+					background: #CCCCCC;
+					outline: none;
+				}
+
+				&.disabled{
+					color: #EFEFEF;
+					pointer-events: none;
+				}
+			}
+
+			.rf-select-empty{
+				font-size: 14px;
+				margin: 0px;
+				padding: 6px 10px;
+			}
+		}
+
+		&.show{
+			display: block;
+		}
+	}
 }
