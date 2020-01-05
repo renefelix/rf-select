@@ -1,3 +1,8 @@
+/**
+ * Função responsável por montar a estrutura necessária para a criação do RF Select
+ * @param {string} placeholder 
+ * @param {number} indexSelect 
+ */
 export default function estruturaPrincipal(placeholder, indexSelect){
    return `<div class="rf-select" tabindex="0" role="listbox">
         <div class="rf-select-header">
