@@ -35,12 +35,6 @@ export default function cliqueNoSelect(classSelect){
 
             // Função que direciona se a lista vai abrir para cima ou para baixo
             direcaoListagemUpDown(listagemRFSelect, indexSelect);
-            
-            // Adiciona a class selected na opção do RF Select caso não tenha nenhuma opção selecionada
-            if(contagemDeOptionsSelecionados(selectDOM[indexSelect]) <= 0){
-                let allRfOption = document.querySelectorAll(`li[data-rf-select="${indexSelect}"]`);
-                allRfOption[0].classList.add('selected');
-            }
         });
     })
 }
