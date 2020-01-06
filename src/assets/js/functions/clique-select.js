@@ -1,7 +1,6 @@
 import criarListagemOptions from "./listagem-options";
 import direcaoListagemUpDown from "./direcao-listagem";
 import cliqueNaOpcao from "./clique-option";
-import {contagemDeOptionsSelecionados} from "./conta-options-selecionados";
 
 /**
  * Essa função é responsável por controlar todas as ações acionadas

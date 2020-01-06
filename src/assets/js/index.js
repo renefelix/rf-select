@@ -3,6 +3,7 @@ import estruturaPrincipal from './functions/estrutura';
 import placeholder from './functions/placeholder';
 import cliqueNoSelect from './functions/clique-select';
 import cliqueForaDoSelect from './functions/clique-fora';
+import { search } from './functions/busca';
 
 function montagemDoSelect(select, indexSelect){
     /**
@@ -42,6 +43,7 @@ function rfSelect(classSelect, args = false){
 
     Array.prototype.forEach.call(selects, (select, indexSelect) => {
         montagemDoSelect(select, indexSelect);
+        search('rf-select-buscar-'+indexSelect, 'li[data-rf-select="'+indexSelect+'"]');
     });
 
     cliqueNoSelect(classSelect);

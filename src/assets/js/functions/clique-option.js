@@ -1,6 +1,5 @@
 import triggerEvent from "./trigger";
 import { contagemDeOptionsSelecionados, indexOpcaoSelecionada } from "./conta-options-selecionados";
-import placeholder from "./placeholder";
 
 export default function cliqueNaOpcao(classSelect){
     let opcoes = document.querySelectorAll('.rf-select-option');
