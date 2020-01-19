@@ -9,6 +9,11 @@
 	font-family: Arial, Helvetica, sans-serif;
 	margin-bottom: 15px;
 
+	&.rf-select-disabled{
+		background: #ecf0f1;
+		pointer-events: none;
+	}
+
 	&:focus{
 		background: #EFEFEF;
 	}
@@ -89,7 +94,8 @@
 				}
 
 				&.disabled{
-					color: #EFEFEF;
+					color: #7f8c8d;
+					background: #ecf0f1;
 					pointer-events: none;
 				}
 			}

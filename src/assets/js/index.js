@@ -24,12 +24,19 @@ function montagemDoSelect(select, indexSelect){
     select.setAttribute('hidden','hidden');
 
     /**
+     * Verifica se o select é disabled
+     */
+
+    let selectDesativado = select.hasAttribute('disabled');
+
+    /**
      * Pega todos os selects e cria a estrutura inicial do HMTL
      * antes de iniciar a TAG
      */
     select.insertAdjacentHTML('beforebegin', estruturaPrincipal(
         placeholder(select),
-        indexSelect
+        indexSelect,
+        selectDesativado
     ));
 }
 

@@ -1,6 +1,21 @@
 # RF Select
 RF Select é uma função interiamente em JavaScript que manipula o elemento `<select>` do HTML e permite torná-lo visualmente mais elegante e customizado. Isso sem precisar da utilização de jQuery ou qualquer outra biblioteca JavaScript.
 
+## Iniciando o projeto
+
+O projeto foi desenvolvido com webpack, e para iniciar ele de forma correta, basta seguir os passos a seguir:
+```npm install```
+
+Para utilizar na versão DEV, 
+```npm run watch```
+
+Instalar o servidor local:
+```npm install http-server -g```
+
+Inicar o projeto com base na pasta DIST:
+```http-server ./dist -O```
+
+
 ## Placeholder
 A função de placeholder é responsável por exbir o texto correto do select. Esse texto é mostrado no header do RF-Select, ou seja, no elemento `.rf-select-header`.
 

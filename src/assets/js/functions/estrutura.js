@@ -3,8 +3,8 @@
  * @param {string} placeholder 
  * @param {number} indexSelect 
  */
-export default function estruturaPrincipal(placeholder, indexSelect){
-   return `<div class="rf-select" tabindex="0" role="listbox">
+export default function estruturaPrincipal(placeholder, indexSelect, disabled){
+   return `<div class="rf-select ${disabled === true ? 'rf-select-disabled' : ''}" tabindex="0" role="listbox">
         <div class="rf-select-header">
             ${placeholder}
         </div>
