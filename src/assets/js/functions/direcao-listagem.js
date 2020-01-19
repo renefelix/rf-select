@@ -5,7 +5,7 @@
 
 export default function direcaoListagemUpDown(listagemRFSelect, indexSelect){
     let alturaWindow = window.innerHeight;
-    
+
     let selectAtual = document.querySelectorAll('.rf-select')[indexSelect];
     let listagemAltura = listagemRFSelect[indexSelect].clientHeight;
 
@@ -20,6 +20,8 @@ export default function direcaoListagemUpDown(listagemRFSelect, indexSelect){
      */
     if(espacoLivreBottom <= listagemAltura){
         listagemRFSelect[indexSelect].style.top = "-"+listagemAltura+"px";
+        listagemRFSelect[indexSelect].classList.add("up");
+        listagemRFSelect[indexSelect].classList.remove("down");
     }
     
     /**
@@ -28,5 +30,7 @@ export default function direcaoListagemUpDown(listagemRFSelect, indexSelect){
      */
     else{
         listagemRFSelect[indexSelect].style.top = alturaSelect-2+"px";
+        listagemRFSelect[indexSelect].classList.add("down");
+        listagemRFSelect[indexSelect].classList.remove("up");
     }
 }

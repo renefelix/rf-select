@@ -4,6 +4,8 @@ import placeholder from './functions/placeholder';
 import cliqueNoSelect from './functions/clique-select';
 import cliqueForaDoSelect from './functions/clique-fora';
 import { search } from './functions/busca';
+import direcaoListagemUpDown from './functions/direcao-listagem';
+import { direcaoComAlturaDinamica } from './functions/direcao-listagem-top';
 
 function montagemDoSelect(select, indexSelect){
     /**
@@ -43,31 +45,20 @@ function rfSelect(classSelect, args = false){
          * quando o for chamado novamente a função e não duplicar
          */
         let rfSelectSibling = select.previousElementSibling;
-        let listagem;
 
         if(rfSelectSibling != null){
             if(rfSelectSibling.classList.contains('rf-select') === true){
-                listagem = rfSelectSibling.querySelector('.rf-listagem');
-
-                // if(listagem.classList.contains('show') === false){
-                    rfSelectSibling.remove();
-                // }
+                rfSelectSibling.remove();
             }
         }
 
-        // if(listagem === undefined){
-            montagemDoSelect(select, indexSelect);
-            search('rf-select-buscar-'+indexSelect, 'li[data-rf-select="'+indexSelect+'"]');
-        // }else{
-        //     if(listagem.classList.contains('show') === false){
-        //         montagemDoSelect(select, indexSelect);
-        //         search('rf-select-buscar-'+indexSelect, 'li[data-rf-select="'+indexSelect+'"]');
-        //     }
-        // }
+        montagemDoSelect(select, indexSelect);
+        search('rf-select-buscar-'+indexSelect, 'li[data-rf-select="'+indexSelect+'"]');
     });
 
     cliqueNoSelect(classSelect);
     cliqueForaDoSelect();
+    direcaoComAlturaDinamica() 
 }
 
 
