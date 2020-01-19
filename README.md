@@ -4,15 +4,19 @@ RF Select é uma função interiamente em JavaScript que manipula o elemento `<s
 ## Iniciando o projeto
 
 O projeto foi desenvolvido com webpack, e para iniciar ele de forma correta, basta seguir os passos a seguir:
+
 ```npm install```
 
 Para utilizar na versão DEV, 
+
 ```npm run watch```
 
 Instalar o servidor local:
+
 ```npm install http-server -g```
 
 Inicar o projeto com base na pasta DIST:
+
 ```http-server ./dist -O```
 
 
