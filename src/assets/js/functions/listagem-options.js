@@ -4,7 +4,7 @@ import { contagemDeOptionsSelecionados, indexOpcaoSelecionada } from "./conta-op
  * Função responsável por criar a listagem de options de cada select
  */
 
- export default function criarListagemOptions(classSelect, indexSelect){
+ export default function criarListagemOptions(classSelect, indexSelect, disabled){
      let selectDOMReferente = document.querySelectorAll(classSelect)[indexSelect];
      let ulListagem = document.querySelectorAll('.rf-ul-listagem');
 
@@ -24,10 +24,10 @@ import { contagemDeOptionsSelecionados, indexOpcaoSelecionada } from "./conta-op
 
             let opcao = selectDOMReferente.options[i];
 			let textDoOption = opcao.text;
-			let disabled = opcao.getAttribute('disabled');
+			let disabled = opcao.hasAttribute('disabled');
 
             ulListagem[indexSelect].insertAdjacentHTML('beforeend', 
-            `<li tabindex="0" class="rf-select-option rf-select-option-${indexSelect} ${disabled != null ? 'disabled' : ''} ${opcao.hasAttribute('selected') ? 'selected' : ''}" data-rf-select="${indexSelect}" data-rf-option="${i}" role="listitem">
+            `<li tabindex="0" class="rf-select-option rf-select-option-${indexSelect} ${disabled === true ? 'disabled' : ''} ${opcao.hasAttribute('selected') ? 'selected' : ''}" data-rf-select="${indexSelect}" data-rf-option="${i}" role="listitem">
                 ${textDoOption}
             </li>`);
 		}

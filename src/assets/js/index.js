@@ -7,18 +7,6 @@ import { search } from './functions/busca';
 
 function montagemDoSelect(select, indexSelect){
     /**
-     * Verifica se o select já esta aplicado para atualizar o dkt-select
-     * quando o for chamado novamente a função e não duplicar
-     */
-    let rfSelectSibling = select.previousElementSibling;
-
-    if(rfSelectSibling != null){
-        if(rfSelectSibling.classList.contains('rf-select') === true){
-            rfSelectSibling.remove();
-        }
-    }
-
-    /**
      * Esconde todos os selects
      */
     select.setAttribute('hidden','hidden');
@@ -47,10 +35,35 @@ function montagemDoSelect(select, indexSelect){
  */
 function rfSelect(classSelect, args = false){
     let selects = document.querySelectorAll(classSelect);
+    
 
     Array.prototype.forEach.call(selects, (select, indexSelect) => {
-        montagemDoSelect(select, indexSelect);
-        search('rf-select-buscar-'+indexSelect, 'li[data-rf-select="'+indexSelect+'"]');
+        /**
+         * Verifica se o select já esta aplicado para atualizar o dkt-select
+         * quando o for chamado novamente a função e não duplicar
+         */
+        let rfSelectSibling = select.previousElementSibling;
+        let listagem;
+
+        if(rfSelectSibling != null){
+            if(rfSelectSibling.classList.contains('rf-select') === true){
+                listagem = rfSelectSibling.querySelector('.rf-listagem');
+
+                // if(listagem.classList.contains('show') === false){
+                    rfSelectSibling.remove();
+                // }
+            }
+        }
+
+        // if(listagem === undefined){
+            montagemDoSelect(select, indexSelect);
+            search('rf-select-buscar-'+indexSelect, 'li[data-rf-select="'+indexSelect+'"]');
+        // }else{
+        //     if(listagem.classList.contains('show') === false){
+        //         montagemDoSelect(select, indexSelect);
+        //         search('rf-select-buscar-'+indexSelect, 'li[data-rf-select="'+indexSelect+'"]');
+        //     }
+        // }
     });
 
     cliqueNoSelect(classSelect);
