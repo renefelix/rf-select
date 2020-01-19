@@ -71,8 +71,13 @@ import {contagemDeOptionsSelecionados, indexOpcaoSelecionada} from "./conta-opti
         }else{
             /**
              * Aplica o textContent da última opção selecionada
+             * E caso não tenha nenhum opção no select, deixa em branco
              */
-            placeholder = select.options[indexOpcaoSelecionada(select)].textContent;
+            if(select.options[indexOpcaoSelecionada(select)] !== undefined){
+                placeholder = select.options[indexOpcaoSelecionada(select)].textContent;
+            }else{
+                placeholder = "";
+            }
         }
     }
     
